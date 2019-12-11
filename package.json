@@ -2,12 +2,19 @@
   "name": "node-db2-challenge",
   "version": "1.0.0",
   "description": "Node DB 2 Module Challenge",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "server": "nodemon index.js"
   },
   "author": "Lambda School",
   "devDependencies": {
     "nodemon": "^1.19.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "knex": "^0.20.4",
+    "sqlite3": "^4.1.1"
   }
 }
