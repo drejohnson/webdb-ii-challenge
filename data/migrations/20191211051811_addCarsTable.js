@@ -3,25 +3,16 @@ exports.up = function(knex) {
     table.increments();
     table.string("make", 255).notNullable();
     table.string("model", 255).notNullable();
-    table.integer("mileage", 255).notNullable();
-    table.integer("year", 4).notNullable();
+    table.integer("year", 4);
     table
       .string("vin", 255)
       .notNullable()
       .unique();
-    table
-      .boolean("is_used")
-      .notNullable()
-      .defaultTo(false);
-    table
-      .enu("transmission", ["v6", "v8", "v12"])
-      .notNullable()
-      .defaultTo("v6");
-    table
-      .enu("title-status", ["Clean", "Salvage", "Junk", "Bonded"])
-      .notNullable()
-      .defaultTo("Clean");
-    table.float("price", 255).notNullable();
+    table.integer("mileage");
+    table.boolean("is_used").defaultTo(false);
+    table.string("transmission", 20);
+    table.string("title_status", 20);
+    table.float("price");
     table.timestamps(false, true);
   });
 };
